@@ -1,0 +1,34 @@
+{
+    "123456789": {
+        "financialLoss": false,
+        "riskFactor": 1.89
+    },
+    "000000000": {
+        "financialLoss": false,
+        "riskFactor": 3.81
+    },
+    "473852958": {
+        "financialLoss": true,
+        "riskFactor": 0.94
+    },
+    "234899843": {
+        "financialLoss": false,
+        "riskFactor": 3.03
+    },
+    "232837878": {
+        "financialLoss": true,
+        "riskFactor": 4.25
+    },
+    "948943859": {
+        "financialLoss": true,
+        "riskFactor": 3.34
+    },
+    "872874828": {
+        "financialLoss": false,
+        "riskFactor": 0.65
+    },
+    "123827389": {
+        "financialLoss": true,
+        "riskFactor": 3.44
+    }
+}

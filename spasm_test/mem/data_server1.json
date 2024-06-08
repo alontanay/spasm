@@ -1,0 +1,42 @@
+{
+    "123456789": {
+        "hadSurgery": false,
+        "totalCharge": 316.15,
+        "numberOfVisits": 7
+    },
+    "000000000": {
+        "hadSurgery": true,
+        "totalCharge": 954.12,
+        "numberOfVisits": 8
+    },
+    "473852958": {
+        "hadSurgery": true,
+        "totalCharge": 711.08,
+        "numberOfVisits": 1
+    },
+    "234899843": {
+        "hadSurgery": true,
+        "totalCharge": 119.12,
+        "numberOfVisits": 4
+    },
+    "232837878": {
+        "hadSurgery": false,
+        "totalCharge": 289.19,
+        "numberOfVisits": 5
+    },
+    "948943859": {
+        "hadSurgery": true,
+        "totalCharge": 936.52,
+        "numberOfVisits": 6
+    },
+    "872874828": {
+        "hadSurgery": true,
+        "totalCharge": 397.39,
+        "numberOfVisits": 5
+    },
+    "123827389": {
+        "hadSurgery": true,
+        "totalCharge": 224.13,
+        "numberOfVisits": 10
+    }
+}

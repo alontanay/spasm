@@ -1,0 +1,6 @@
+{
+    "123456789": {"age": 18, "sex": "M", "hadSurgery": false, "totalCharge": 0.0},
+    "000000000": {"age": 77, "sex": "F", "hadSurgery": true, "totalCharge": 140.21},
+    "473852958": {"age": 30, "sex": "F", "hadSurgery": true, "totalCharge": 59880.68},
+    "234899843": {"age": 56, "sex": "M", "hadSurgery": false, "totalCharge": 200.90}
+}

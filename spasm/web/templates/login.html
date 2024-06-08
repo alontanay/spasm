@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='form.css') }}">
+{% endblock extra_head%}
+{% block content %}
+<legend class="form-legend">Log In</legend>
+<div class="form-container">
+    {% include "form.html" %}
+    <small><a class="form-link" href="#">Forgot Password?</a></small>
+</div>
+<div style="text-align:right">
+    <small><a class="form-link" href="{{ url_for('register') }}">Register New Account</a></small>
+</div>
+{% endblock content%}

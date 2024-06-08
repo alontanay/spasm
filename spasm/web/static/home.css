@@ -1,0 +1,39 @@
+.navigation-row {
+    margin: 10px 0px;
+    min-width: 410px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.navigation-block {
+    min-height: 100px;
+    position: relative;
+    box-sizing: border-box;
+    border-color: #AAA;
+    background-color: #aaccf0;
+}
+.navigation-block:hover {
+    filter:brightness(0.9);
+}
+
+.navigation-block > a > span {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.navigation-row > div {
+    box-sizing: border-box;
+    min-width: 200px;
+    width: calc(50% - 5px);
+    display: inline-block;
+}
+
+.navigation-row {
+    word-wrap: break-word;
+}
+

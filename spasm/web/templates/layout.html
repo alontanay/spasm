@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='form.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>{% if title %}SPASM: {{title}}{% else %}SPASM{% endif %}</title>
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+
+<body>
+    <div id="header">
+        <div>
+            <a id="header-title" href="{{ url_for('home') }}">SPASM</a>
+            <div>
+                {% if current_user.is_authenticated %}
+                <a style="box-sizing:border-box;text-decoration:underline;" href="{{ url_for('personal_account') }}">
+                    <pre>{{ current_user.username|replace('_',' ') }}</pre></a> • <a href="{{ url_for('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                {% else %}
+                <a href="{{ url_for('login') }}">
+                    Login</a> •
+                <a href="{{ url_for('register') }}">
+                    Register
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset>
+        {% for field in form %}
+        <div>
+            {% if field.__class__.__name__ == 'StringField' or field.__class__.__name__ == 'PasswordField' or field.__class__.__name__ == 'TextAreaField' %}
+                {{ field.label(class="form-label")}}
+                {% if field.errors %}
+                    {{ field(class="form-input invalid-input")}}
+                    <div class="invalid-feedback">
+                        {% for error in field.errors %}
+                        <span><pre>{{ error }}</pre></span>
+                        {% endfor %}
+                    </div>
+                {% else %} 
+                    {{ field(class="form-input")}}
+                {% endif %} 
+            {% elif field.__class__.__name__ == 'BooleanField' %}
+                {{ field(class="form-checkbox")}}
+                {{ field.label(class="form-label checkbox-label")}}
+            {% endif %}
+        </div>
+        {% endfor %}
+    </fieldset>
+    <div>
+        {{ form.submit(class="form-submit") }}
+    </div>
+</form>

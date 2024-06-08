@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Spasm for Organizations</h1>
+<div class="content-container">
+We are glad to be joined by three trust-worthy, although fictitious, organizations:
+{% for data_server in data_servers %}
+<div class="data-server-info-card">
+{% for key, value in data_server.information.items() %}
+<p>{{key}}: {{ value }}</p>
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+{% endblock %}

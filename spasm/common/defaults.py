@@ -1,0 +1,3 @@
+TIMEOUT = 4
+
+REFRESH_DELAY = 0.1

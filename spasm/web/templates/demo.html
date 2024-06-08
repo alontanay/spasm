@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<legend class="form-legend">Demo: Submit Query</legend>
+<div class="form-container">
+    {% include "form.html" %}
+</div>
+<br>
+<div class="content-container">
+{% if not query_success  %}
+Query results will appear here.
+{% else %}
+Success!
+<table id="query-results-table">
+<tr>
+<td>Record No.</td>
+{% for data_server in data_servers %}
+    <td>Data from "{{ data_server.information['name'] }}"</td>
+{% endfor %}
+</tr>
+{% for record in data %}
+<tr>
+    <td>{{ loop.index }}</td>
+    {% for data_server in data_servers %}
+        <td>{{ record[data_server.id] }}</td>
+    {% endfor %}
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+</div>
+{% endblock %}

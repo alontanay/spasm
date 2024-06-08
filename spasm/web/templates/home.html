@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+{% endblock extra_head %}
+{% block content %}<div class="content-container">
+
+<h1 style="text-align:center;margin:5px 0px 0px 0px;">Welcome to SPASM!</h1>
+<p style="text-align:center;margin-top:0px;"><b>S</b>ystem for <b>P</b>rotected <b>A</b>nalysis of <b>S</b>ensitive <b>M</b>ulti-source-data</p>
+<p>• This is the home page for my 12th grade cyber class final project. - Alon Tanay</p>
+<div class="content-container navigation-block" style="background-color:">
+    <a href="{{ url_for('about') }}"><span></span></a>
+    <h3 style="margin:0px">ⓘ About This Project</h3>
+</div>
+
+<div class="navigation-row">
+    <div class="content-container navigation-block" style="background-color: #fad587">
+        <a href="{{ url_for('analysis') }}"><span></span></a>
+        <h3 style="margin:0px">SPASM for Analysts</h3>
+    </div>
+    <div class="content-container navigation-block" style="background-color: #85dba9;float:right">
+        <a href="{{ url_for('organization') }}"><span></span></a>
+        <h3 style="margin:0px">SPASM for Organizations</h3>
+    </div>
+</div>
+
+</div>{% endblock content %}
