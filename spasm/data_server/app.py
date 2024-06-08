@@ -1,17 +1,12 @@
 from __future__ import annotations
 
-import datetime
-
 from queue import Queue, Empty
-from threading import Thread, Event, Lock
-
-from Crypto.PublicKey import ECC
-from Crypto.Signature import eddsa
+from threading import Thread, Event
 
 from spasm.common.network_components import DataServer
-from spasm.common.security import PublicKey, AsymmetricKey
+from spasm.common.security import AsymmetricKey
 from spasm.common.atomic import safe_thread_target, ImpliedEvent
-from spasm.common.graphics import LoggerGraphicInterface
+from spasm.common.graphics import LoggerGraphicInterface, time_now
 
 class App:
     def __init__(self, address: tuple[str, int], database: Database, key : AsymmetricKey, data_servers : list[DataServer], this_data_server : DataServer):
@@ -47,7 +42,7 @@ class App:
         print('Terminating...')
         try:
             while msg := self.logger.get_nowait():
-                print(f'[{str(datetime.datetime.now())[:-7]}]',msg)
+                print(f'[{time_now()}]',msg)
         except Empty:
             pass
         print('Done.')
@@ -56,4 +51,4 @@ class App:
         return f'App[at address {self.address}]'
 
 from spasm.data_server.data import DataComponent, Database
-from spasm.data_server.simple_network import ServerComponent
+from spasm.data_server.network import ServerComponent

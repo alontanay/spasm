@@ -4,6 +4,9 @@ from threading import Lock, Event
 import datetime
 from queue import Queue, Empty
 
+def time_now():
+    return str(datetime.datetime.now())[:-7]
+
 class ConsoleOutputWidget(tk.Text):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -15,13 +18,11 @@ class ConsoleOutputWidget(tk.Text):
     def add_line(self, line):
         self.lines.append(line)
         self.configure(state='normal')
-        self.insert(tk.END, f'{str(datetime.datetime.now())[:-7]} > {line}\n')
+        self.insert(tk.END, f'{time_now()} > {line}\n')
         self.configure(state='disabled')
         self.yview(tk.END)
         
     def add_text(self, text : str):
-        # for line in text.splitlines():
-        #     self.add_line(line)
         self.add_line(text)
 
 class LoggerGraphicInterface:
@@ -37,7 +38,7 @@ class LoggerGraphicInterface:
             pass
         self.window.after(100, self.handle_updates)
     
-    def __init__(self, logger : Queue, title, subtitle : str, public_key):
+    def __init__(self, logger : Queue, title, subtitle, public_key):
         self.logger = logger
         
         self.logger.put('[INTERFACE] Started graphics interface.')

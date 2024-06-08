@@ -185,7 +185,7 @@ class Message:
         return res
     
     def check_data(self):
-        # ! TODO
+        # TODO
         pass
 
     def decode_data(self, payload):
@@ -216,24 +216,5 @@ class Message:
                 f'Key \'{key}\' not found in data of message of type \'{self.type.name}\'.')
         return self.data[key]
 
-
-def reply(conn: socket.socket, message: Message, data):
-    conn.send(Message(MessageType.RESPONSE, data, message.id).to_bytes())
-
-# class Ping(Message):
-#     def __init__(self):
-#         self.type = MessageType.PING
-
-
-# class Info(Message):
-#     def __init__(self):
-#         self.type = MessageType.INFO
-
-# class InitKeyExchange(Message):
-#     def __init__(self, data_servers):
-#         self.type = MessageType.INIT_KEY_EXCHANGE
-#         self.data = data_servers
-
-# class StartKeyExchange(Message):
-#     def __init__(self):
-#         self.type = MessageType.START_KEY_EXCHANGE
+def reply():
+    pass

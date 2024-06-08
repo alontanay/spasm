@@ -1,4 +1,4 @@
-from typing import Callable, Iterable, overload, Any
+from typing import Callable, Iterable, Any
 from threading import Event, Lock
 import time
 
@@ -6,24 +6,14 @@ from queue import Queue, Empty
 
 from Crypto.Hash import SHA384
 
-from spasm.common.atomic import AtomicCounter
-from spasm.common.protocol import Message
 from spasm.common.defaults import REFRESH_DELAY
 
-from spasm.data_server.app import App
-
 class Database:
-    '''Implementation a database with Python's dictionary'''
-
     def __init__(self, data: dict):
         self._data = data
 
     def get(self, id):
         '''Returns a deep copy of the record of `id` in the database. Thread-safe.'''
-        pass
-
-    def write():
-        '''Not Thread-safe'''
         pass
 
 
@@ -68,4 +58,3 @@ class DataComponent:
                 time.sleep(REFRESH_DELAY)
                 pass
         self.logger.put(f'[DATA] Closed database. approximately {self._request_queue.qsize()} requests lost.')
-        
